@@ -1,0 +1,28 @@
+array descending
+
+#include<PIC18F4550.h>
+void main(void){
+	int temp,i,j;
+
+	int arr[5]={7,2,8,3,9};
+	TRISB=0;
+	LATB=0;
+
+	int swap;
+	for(i=0;i<5-1;i++){
+	swap=0;
+	for(j=0;j<5-i-1;j++{
+		if(arr[j]<arr[j+1]{
+			temp=arr[j];
+			arr[j]=arr[j+1];
+			arr[j+1]=temp;
+			swap=1;
+			}
+		}
+	if(swap==0);
+	break;
+	}
+
+
+
+}

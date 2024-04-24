@@ -1,0 +1,16 @@
+// led
+
+#include<xc.h>
+#define _XTAL_FREQ 8000000
+void main(void){
+	PORTC=0;
+	TRISC=0;
+	while(1){
+		_delay_ms(150);
+		PORTC=1;
+		_delay_ms(150);
+		PORTC=0;
+	}
+
+
+}

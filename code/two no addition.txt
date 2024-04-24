@@ -1,0 +1,16 @@
+two no addition
+
+#include<PIC18F4550>
+void main(void){
+int i,j,x;
+TRISB=0;
+LATB=0;
+
+i=0x03;
+j=0x04;
+x=i+j;
+PORTB=x;
+PORTC=i;
+PORTD=j;
+
+}
