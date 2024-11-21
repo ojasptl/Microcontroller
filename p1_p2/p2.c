@@ -35,21 +35,30 @@ void main() {
     printf("Received %d bytes: %s\n", inpsize, inp);
 
     for (int i = 0; i < inpsize; i++) {
-        if (inp[i] == 'a' | inp[i] == 'e' | inp[i] == 'i' | inp[i] == 'o' | inp[i] == 'u') {
-            vowels[k] = inp[i];
-            charcnt++;
-            k++;
-        }
-        if (inp[i + 1] == " " | inp[i + 1] == "\n") {
-            wrdcnt++;
-        }
-        if (inp[i] == "\n") {
-            linecnt++;
-        }
-        charcnt++;
+                if(s[i] == '.') 
+                {
+                    linecnt++; 
+                }
 
-    }
-    vowels[k] = '\0';
+                if (s[i] == ' ' || s[i] == '.' || s[i] == '\0') 
+                {
+                    if (i > 0 && s[i - 1] != ' ' && s[i - 1] != '\n') {
+                        wordcnt++; 
+                    }
+                } 
+                else 
+                {
+                    charcnt++;  
+                    if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u') {
+                        vowel[k++] = s[i];  
+                    }
+                }
+        }
+
+        if (num > 0 && s[num - 1] != ' ' && s[num - 1] != '\n') {
+            wordcnt++;
+        }
+        vowel[k] = '\0';
     sprintf(rec, "Vowels: %s\nCharacters: %d\nWords: %d\nLines: %d\n", vowels, charcnt, wrdcnt, linecnt);
     recsize = strlen(rec);
     rec[recsize - 1] = '\0';
